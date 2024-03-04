@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './style.css'
+import { json } from 'react-router-dom'
 
 function Home() {
     const [data, setData] = useState([])
@@ -7,8 +8,8 @@ function Home() {
 
 
     const addItem = (item) => {
-        setitemData([...itemData , { title: item.title, image: item.image, price: item.price }])
-        console.log(itemData, "checking");
+        localStorage.setItem('data' , JSON.stringify([...itemData , { title: item.title, image: item.image, price: item.price , itemQuantity : 1 }]))
+        setitemData(JSON.parse(localStorage.getItem('data')))
     }
 
     useEffect(() => {

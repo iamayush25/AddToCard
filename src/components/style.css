@@ -101,3 +101,31 @@
     justify-content: space-around;
     list-style: none;
 }
+
+/* Add To Cart  */ 
+
+.container {
+    display: block;
+}
+
+.Addcard {
+    display: flex;
+    border: 2px solid black;
+    column-gap: 20px;
+    width: 97%;
+    padding: 20px;
+    margin-bottom: 5px;
+}
+
+
+.card-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.card-Details {
+    /* border: 2px solid black; */
+    width: 100%;
+    
+}
