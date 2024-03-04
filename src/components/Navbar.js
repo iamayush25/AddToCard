@@ -1,0 +1,40 @@
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from './Home';
+import AddToCart from './AddToCart';
+import './style.css'
+
+function Navbar() {
+    const [flag, setFlag] = useState("")
+
+    return (
+        <div>
+            <header className='Navbar-Main'>
+                <h1>Unique Wear</h1>
+                <span className='navItem'>
+                    <span className='inputs'>
+                        <input className='inputBox' type='search' placeholder=' Search Item' />
+                        <button className='searchBtn'>Search</button>
+                    </span>
+                        <ul className='links' >
+                            <li>
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link to="/cart" ><i className="fa-solid fa-cart-shopping"></i></Link>
+                            </li>
+                        </ul>
+
+                </span>
+
+            </header>
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='cart' element={<AddToCart/>} />
+            </Routes>
+        </div>
+    )
+    
+}
+
+export default Navbar
