@@ -10,7 +10,7 @@ function Navbar() {
     return (
         <div>
             <header className='Navbar-Main'>
-                <h1>Shopping card</h1>
+                <h1>ShopCart</h1>
                 <span className='navItem'>
                     <span className='inputs'>
                         <input className='inputBox' type='search' placeholder=' Search Item' />
