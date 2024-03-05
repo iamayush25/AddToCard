@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from './Navbar'
 
 function AddToCart() {
 
@@ -7,24 +6,28 @@ function AddToCart() {
   const [count, setCount] = useState(1)
 
   const increaseQuantity = (item, index) => {
-    const indexItem = cartData[index] 
+    const indexItem = cartData[index]
     indexItem.itemQuantity = item.itemQuantity + 1
-    setCartData([...cartData,indexItem])
+    setCartData([...cartData, indexItem])
   }
 
   const decreaseQuantity = (item, index) => {
-    const indexItem = cartData[index] 
     if (item.itemQuantity > 0) {
-      indexItem.itemQuantity = item.itemQuantity - 1
-      setCartData([...cartData,indexItem])
+      cartData[index].itemQuantity = item.itemQuantity - 1
+      setCartData([...cartData])
+
     }
-    
+    else if (item.itemQuantity === 0) {
+      cartData.splice(index, 1)
+      setCartData([...cartData])
+
+    }
   }
 
   useEffect(() => {
     setCartData(JSON.parse(localStorage.getItem('data')))
   }, [])
-  console.log(cartData);
+
 
   return (
     <div className='container'>

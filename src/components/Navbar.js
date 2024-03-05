@@ -18,10 +18,10 @@ function Navbar() {
                     </span>
                         <ul className='links' >
                             <li>
-                                <Link to="/">Home</Link>
+                                <Link className='link' to="/">Home</Link>
                             </li>
                             <li>
-                                <Link to="/cart" ><i className="fa-solid fa-cart-shopping"></i></Link>
+                                <Link className='link' to="/cart" ><i className="fa-solid fa-cart-shopping"></i></Link>
                             </li>
                         </ul>
 
