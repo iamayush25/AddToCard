@@ -4,6 +4,7 @@ import Home from './Home';
 import AddToCart from './AddToCart';
 import './style.css'
 
+        // Navbar ......
 function Navbar() {
     const [flag, setFlag] = useState("")
 
