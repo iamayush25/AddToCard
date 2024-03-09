@@ -5,22 +5,25 @@ function AddToCart() {
   const [cartData, setCartData] = useState([])
 
         // increase Quantity of items ......
-  const increaseQuantity = (item, index) => {
+    const increaseQuantity = (item, index) => {
     cartData[index].itemQuantity = item.itemQuantity + 1
+    cartData[index].price = (item.price/(item.itemQuantity-1)) * cartData[index].itemQuantity 
     setCartData([...cartData])
     updateLocalStorage([...cartData])
+    console.log(item.itemQuantity);
+    console.log(item.price);
 
   }
 
         // decrease Quantity of items .......
   const decreaseQuantity = (item, index) => {
-    if (item.itemQuantity > 0) {
+    if (item.itemQuantity > 1) {
       cartData[index].itemQuantity = item.itemQuantity - 1
       setCartData([...cartData])
       updateLocalStorage([...cartData])
 
     }
-    else if (item.itemQuantity === 0) {
+    else if (item.itemQuantity === 1) {
       cartData.splice(index, 1)
       setCartData([...cartData])
       updateLocalStorage([...cartData])
@@ -33,6 +36,7 @@ function AddToCart() {
     localStorage.setItem('data', JSON.stringify(data));
   };
 
+  // useEffect hook for get cart data from localStorage
   useEffect(() => {
     setCartData(JSON.parse(localStorage.getItem('data')) || [])
   }, [])
