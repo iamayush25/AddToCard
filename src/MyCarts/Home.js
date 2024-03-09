@@ -6,22 +6,22 @@ function Home() {
     const [data, setData] = useState([])
     const [itemData, setitemData] = useState([])
 
-                     //  Adding Items into cart 
+                //  Adding Items into cart 
     const addItem = (item) => {
-        let storedData = JSON.parse(localStorage.getItem('data')) || [];
+        let storedData = JSON.parse(localStorage.getItem('data')) || [] ;
     
-                    // Check item is already Available in the cart ..........
+                // Check item is already Available in the cart ..........
         const existingItemIndex = storedData.findIndex((storedItem) => storedItem.title === item.title);
         if (existingItemIndex !== -1) {
-                 // If item already available in the cart , update item quantity......
+                // If item already available in the cart , update item quantity......
             storedData[existingItemIndex].price *= storedData[existingItemIndex].itemQuantity
-            storedData[existingItemIndex].itemQuantity += 1;
+            storedData[existingItemIndex].itemQuantity += 1 ; 
         } else {
-                  // If item doesn't exist, add it to the cart......
+                // If item doesn't exist, add it to the cart......
             storedData.push({ title: item.title, image: item.image, price: item.price, itemQuantity: 1 });
         }
     
-                 // Update localStorage .......
+                // Update localStorage .......
         localStorage.setItem('data', JSON.stringify(storedData));
     
         // Update state
