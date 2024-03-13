@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react'
 function AddToCart() {
 
   const [cartData, setCartData] = useState([])
+  const [price, setPrice] = useState([])
 
         // increase Quantity of items ......
     const increaseQuantity = (item, index) => {
     cartData[index].itemQuantity = item.itemQuantity + 1
-    cartData[index].price = (item.price/(item.itemQuantity-1)) * cartData[index].itemQuantity 
+    cartData[index].price = (item.price / (item.itemQuantity - 1)) * cartData[index].itemQuantity 
     setCartData([...cartData])
     updateLocalStorage([...cartData])
     console.log(item.itemQuantity);
@@ -19,16 +20,16 @@ function AddToCart() {
   const decreaseQuantity = (item, index) => {
     if (item.itemQuantity > 1) {
       cartData[index].itemQuantity = item.itemQuantity - 1
+      cartData[index].price = price[0] * cartData[index].itemQuantity
       setCartData([...cartData])
       updateLocalStorage([...cartData])
-
+    
     }
+
     else if (item.itemQuantity === 1) {
       cartData.splice(index, 1)
       setCartData([...cartData])
       updateLocalStorage([...cartData])
-
-
     }
   }
          // Update localStorage ......
@@ -38,7 +39,12 @@ function AddToCart() {
 
   // useEffect hook for get cart data from localStorage
   useEffect(() => {
-    setCartData(JSON.parse(localStorage.getItem('data')) || [])
+    const data = JSON.parse(localStorage.getItem('data')) || []
+    setCartData(data)
+    const maping = data.map((product) => product.price)
+    setPrice(maping)
+    console.log(maping , "about");
+    
   }, [])
 
         // Display In cart .......
