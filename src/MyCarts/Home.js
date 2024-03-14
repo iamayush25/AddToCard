@@ -42,21 +42,71 @@ function Home() {
 
     // Display all the items...
     return (
-        <div className='main'>
-            {data.map((item, index) => {
-                return (
-                    <div className="card" style={{ width: "18rem" }} key={item.id}>
-                        <h3 className="card-text">{item.category.toUpperCase()}</h3>
-                        <img src={`${item.image}`} className="card-img-top" />
-                        <h5 className="card-title">{item.title}</h5>
-                        <p className="card-text">Price : {item.price} $</p>
-                        <button onClick={() => addItem(item, index)} className="btn btn-primary" >ADD TO CART</button>
-                    </div>
+        <div className='outer'>
+            <div className='addsImg'>
+                <img className='addimg-1' src={require('./Image/offer.jpg')} />
+            </div>
+            <hr />
+            <span className='letestHeading'><h1>Letest Products</h1></span>
+            <hr />
+
+            <div className='main'>
+                {data.map((item, index) => {
+                    return (
+                        <div className="card" style={{ width: "18rem" }} key={item.id}>
+                            <h3 className="card-text">{item.category.toUpperCase()}</h3>
+                            <img src={`${item.image}`} className="card-img-top" />
+                            <h5 className="card-title">{item.title}</h5>
+                            <p className="card-text">Price : {item.price} $</p>
+                            <button onClick={() => addItem(item, index)} className="btn btn-primary" >ADD TO CART</button>
+                        </div>
+
+
                     )
                 })}
-                <Navbar item = {data}/>
+            </div>
+
+            {/*Footer*/}
+
+            <footer className='footer'>
+                <div className='footerItem'>
+                    <ul>
+                        <h2>Shop Non-Stop on ShopCart</h2>
+                        <li>Support</li>
+                        <li>FAQ's</li>
+                        <li>Blog</li>
+                        <li>Legal templates</li>
+                    </ul>
+                </div>
+                <div className='footerItem'>
+                    <ul>
+                        <h2>Support & resources</h2>
+                        <li>Support</li>
+                        <li>FAQ's</li>
+                        <li>Blog</li>
+                        <li>Legal templates</li>
+                    </ul>
+                </div>
+                <div className='footerItem'>
+                    <ul>
+                        <h2>Features</h2>
+                        <li>Add item in cart</li>
+                        <li>Search Item By category</li>
+                        <li>Add quantity</li>
+                    </ul>
+                </div>
+                <div className='footerItem'>
+                    <ul>
+                        <h2>MyOnlineStore</h2>
+                        <li>Contact</li>
+                        <li>About Us</li>
+                    </ul>
+                </div>
+                <hr className='hr' />
+                
+            </footer>
         </div>
-        )
+    )
 }
 
 export default Home;
