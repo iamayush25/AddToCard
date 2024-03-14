@@ -32,9 +32,7 @@ function Navbar() {
                             <Link className='link' to="/cart" ><i className="fa-solid fa-cart-shopping"></i></Link>
                         </li>
                     </ul>
-
                 </span>
-
             </header>
             <Routes>
                 <Route path='/' element={<Home />} />
