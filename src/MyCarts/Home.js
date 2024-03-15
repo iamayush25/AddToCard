@@ -103,7 +103,14 @@ function Home() {
                     </ul>
                 </div>
                 <hr className='hr' />
-                
+                <div className='socialAccount'>
+                    <span className='mails' >ayush22@navgurukul.org</span>
+                    <span className='mails' >+91-9993551109</span>
+                    <span className='mails' >ayush22@navgurukul.org</span>
+                    <span className='mails' >ayush22@navgurukul.org</span>
+                    <span className='mails' >ayush22@navgurukul.org</span>
+                </div>
+
             </footer>
         </div>
     )
