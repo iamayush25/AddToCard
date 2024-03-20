@@ -10,7 +10,6 @@ function Home() {
     //  Adding Items into cart 
     const addItem = (item) => {
         let storedData = JSON.parse(localStorage.getItem('data')) || [];
-
         // Check item is already Available in the cart ..........
         const existingItemIndex = storedData.findIndex((storedItem) => storedItem.title === item.title);
         if (existingItemIndex !== -1) {
