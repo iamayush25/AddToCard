@@ -14,14 +14,7 @@ function Navbar() {
                 <h1>ShopCart</h1>
                 <span className='navItem'>
                     <span className='inputs'>
-                        {/*<input className='inputBox' type='search' placeholder=' Search Item' />*/}
-                        <div>
-                            <datalist id="suggestions">
-                                <option>Second Option</option>
-                                <option>First option</option>
-                            </datalist>
-                            <input autoComplete="on" list="suggestions" />
-                        </div>
+                        <input className='inputBox' type='search' placeholder=' Search Item' />
                         <button className='searchBtn'>Search</button>
                     </span>
                     <ul className='links' >
