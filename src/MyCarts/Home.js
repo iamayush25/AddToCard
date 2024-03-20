@@ -54,8 +54,10 @@ function Home() {
                 {data.map((item, index) => {
                     return (
                         <div className="card" style={{ width: "18rem" }} key={item.id}>
-                            <h3 className="card-text">{item.category.toUpperCase()}</h3>
+                            <h2 className="card-text">{item.category.toUpperCase()}</h2>
+                            <hr />
                             <img src={`${item.image}`} className="card-img-top" />
+                            <hr />
                             <h5 className="card-title">{item.title}</h5>
                             <p className="card-text">Price : {item.price} $</p>
                             <button onClick={() => addItem(item, index)} className="btn btn-primary" >ADD TO CART</button>
@@ -68,50 +70,14 @@ function Home() {
 
             {/*Footer*/}
 
-            <footer className='footer'>
-                <div className='footerItem'>
-                    <ul>
-                        <h2>Shop Non-Stop on ShopCart</h2>
-                        <li>Support</li>
-                        <li>FAQ's</li>
-                        <li>Blog</li>
-                        <li>Legal templates</li>
-                    </ul>
-                </div>
-                <div className='footerItem'>
-                    <ul>
-                        <h2>Support & resources</h2>
-                        <li>Support</li>
-                        <li>FAQ's</li>
-                        <li>Blog</li>
-                        <li>Legal templates</li>
-                    </ul>
-                </div>
-                <div className='footerItem'>
-                    <ul>
-                        <h2>Features</h2>
-                        <li>Add item in cart</li>
-                        <li>Search Item By category</li>
-                        <li>Add quantity</li>
-                    </ul>
-                </div>
-                <div className='footerItem'>
-                    <ul>
-                        <h2>MyOnlineStore</h2>
-                        <li>Contact</li>
-                        <li>About Us</li>
-                    </ul>
-                </div>
-                <hr className='hr' />
-                <div className='socialAccount'>
-                    <span className='mails' >ayush22@navgurukul.org</span>
-                    <span className='mails' >+91-9993551109</span>
-                    <span className='mails' >ayush22@navgurukul.org</span>
-                    <span className='mails' >ayush22@navgurukul.org</span>
-                    <span className='mails' >ayush22@navgurukul.org</span>
-                </div>
-
-            </footer>
+            <div class="card mb-3" style={{width : "76em"}}>
+                <img src="..." className="card-img-top" alt="..."/>
+                    <div className="card-body">
+                        <h5 className="card-title">Card title</h5>
+                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p className="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+            </div>
         </div>
     )
 }
