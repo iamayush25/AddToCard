@@ -131,7 +131,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.2s ease-in-out;
     border: 1px solid black;
-    height: 510px;
+    height: auto;
     box-shadow: 2px 1px 2px 0px gray;
     text-align: center;
 
