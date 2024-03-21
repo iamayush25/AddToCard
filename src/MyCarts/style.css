@@ -1,3 +1,117 @@
+/* Navbar CSS */
+
+.Navbar-Main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 97%;
+    z-index: 1000;
+}
+
+.Navbar-Main h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+}
+
+.inputs {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.inputBox {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.searchBtn {
+    padding: 6px 12px;
+    background-color: #555;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+    font-size: 14px;
+    padding-left: 2em;
+    font-size: larger;
+}
+
+.link:last-child {
+    margin-right: 0;
+}
+
+@media only screen and (max-width: 480px) {
+    .Navbar-Main {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .Navbar-Main {
+        /* flex-direction: column; */
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .inputs {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .inputBox {
+        width: calc(100% - 90px);
+        font-size: small;
+        margin-top: 3px;
+    }
+
+    .searchBtn {
+        margin-left: 0;
+        margin-top: 3px;
+    }
+
+    .links {
+        margin-right: 30px;
+    }
+
+    .link {
+        font-size: 15px;
+        padding-left: 7px;
+    }
+}
+
+/* Home Css  */
+
 .main {
     display: flex;
     flex-wrap: wrap;
@@ -60,7 +174,7 @@
 .addsImg {
     /* border: 2px solid black; */
     background-size: cover;
-    margin-top: 65px;
+    margin-top: 52px;
 }
 
 
@@ -75,6 +189,13 @@
     justify-content: center;
 }
 
+@media only screen and (max-width: 768px) {
+    .addsImg {
+        background-size: cover;
+        margin-top: 90px;
+    }
+}
+
 
 
 /* footer  */
@@ -86,7 +207,6 @@
     justify-content: space-around;
     flex-wrap: wrap;
     color: white;
-    /* flex-direction: column; */
 }
 
 .footerItem {
@@ -106,69 +226,6 @@
 
 .mails {
     margin: 10px;
-}
-
-
-/* Navbar CSS */
-
-.Navbar-Main {
-    background-color: aliceblue;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    height: 60px;
-    border: 1px solid black;
-}
-
-.navItem {
-    width: 50%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-
-}
-
-.inputBox {
-    padding: 10px;
-    width: 300px;
-    border: none;
-    border-radius: 5px;
-}
-
-.searchBtn {
-    padding: 10px 20px;
-    background-color: #e70d0d;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.searchBtn:hover {
-    background-color: #ff3333;
-}
-
-.links {
-    width: 15%;
-    display: flex;
-    /* border: 2px solid black; */
-    justify-content: space-around;
-    list-style: none;
-    font-size: xx-large;
-    column-gap: 20px;
-}
-
-.link {
-    color: black;
-    text-decoration: none;
 }
 
 
