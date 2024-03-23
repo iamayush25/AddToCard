@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './style.css'
 import { json } from 'react-router-dom'
-import Navbar from './Navbar'
+import AddToCart from './AddToCart'
+
 
 function Home() {
     const [data, setData] = useState([])
