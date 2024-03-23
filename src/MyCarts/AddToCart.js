@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState , createContext , useContext } from 'react';
 import './style.css';
+import Home from './Home';
+
+
+const Context = createContext();
 
 function AddToCart() {
   const [cartData, setCartData] = useState([]);
   const [price, setPrice] = useState([]);
+
 
   const increaseQuantity = (item, index) => {
     cartData[index].itemQuantity = item.itemQuantity + 1;
@@ -37,6 +42,7 @@ function AddToCart() {
   }, []);
 
   return (
+    <>
     <div className='cart-main-outer'>
       <div className='cartHeading'><h1>Cart Items</h1></div>
       <hr/>
@@ -61,6 +67,10 @@ function AddToCart() {
         ))}
       </div>
     </div>
+    <Context.Provider value={{increaseQuantity}}>
+      <Home />
+    </Context.Provider>
+    </>
   );
 }
 
