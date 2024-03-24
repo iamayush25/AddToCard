@@ -67,9 +67,6 @@ function AddToCart() {
         ))}
       </div>
     </div>
-    <Context.Provider value={{increaseQuantity}}>
-      <Home />
-    </Context.Provider>
     </>
   );
 }
