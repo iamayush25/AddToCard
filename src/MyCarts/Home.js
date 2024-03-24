@@ -9,25 +9,28 @@ function Home() {
     const [itemData, setitemData] = useState([])
 
     //  Adding Items into cart 
-    const addItem = (item) => {
-        let storedData = JSON.parse(localStorage.getItem('data')) || [];
-        // Check item is already Available in the cart ..........
-        const existingItemIndex = storedData.findIndex((storedItem) => storedItem.title === item.title);
-        if (existingItemIndex !== -1) {
-            // If item already available in the cart , update item quantity......
-            storedData[existingItemIndex].price *= storedData[existingItemIndex].itemQuantity
-            storedData[existingItemIndex].itemQuantity += 1;
-        } else {
-            // If item doesn't exist, add it to the cart......
-            storedData.push({ title: item.title, image: item.image, price: item.price, itemQuantity: 1 });
-        }
+    //  Adding or removing items from cart 
+const addItem = (item) => {
+    let storedData = JSON.parse(localStorage.getItem('data')) || [];
+    // Check item is already available in the cart ..........
+    const existingItemIndex = storedData.findIndex((storedItem) => storedItem.title === item.title);
+    if (existingItemIndex !== -1) {
+        // If item already available in the cart, remove it........
+        storedData.splice(existingItemIndex, 1);
+        alert("Item Removed from Cart");
+    } else {
+        // If item doesn't exist, add it to the cart......
+        storedData.push({ title: item.title, image: item.image, price: item.price, itemQuantity: 1 });
+        alert("Item Added to Cart");
+    }
 
-        // Update localStorage .......
-        localStorage.setItem('data', JSON.stringify(storedData));
+    // Update localStorage .......
+    localStorage.setItem('data', JSON.stringify(storedData));
 
-        // Update state
-        setitemData(storedData);
-    };
+    // Update state
+    setitemData(storedData);
+};
+
 
     // Fetch items fron the API ......
     useEffect(() => {
@@ -49,7 +52,6 @@ function Home() {
             <hr />
             <span className='letestHeading'><h1>Letest Products</h1></span>
             <hr />
-
             <div className='main'>
                 {data.map((item, index) => {
                     return (
@@ -60,10 +62,10 @@ function Home() {
                             <hr />
                             <h5 className="card-title">{item.title}</h5>
                             <p className="card-text">Price : {item.price} $</p>
-                            <button onClick={() => addItem(item, index)} className="btn btn-primary" >ADD TO CART</button>
+                            <button onClick={() => addItem(item, index)} className="btn btn-primary" >
+                            {itemData.some(cartItem => cartItem.title === item.title) ? "REMOVE ITEM" : "ADD TO CART"}
+                            </button>
                         </div>
-
-
                     )
                 })}
             </div>
