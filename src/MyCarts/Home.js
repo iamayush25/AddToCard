@@ -9,19 +9,22 @@ function Home() {
     const [itemData, setitemData] = useState([])
 
     //  Adding Items into cart 
-    //  Adding or removing items from cart 
+     
 const addItem = (item) => {
     let storedData = JSON.parse(localStorage.getItem('data')) || [];
     // Check item is already available in the cart ..........
     const existingItemIndex = storedData.findIndex((storedItem) => storedItem.title === item.title);
     if (existingItemIndex !== -1) {
+        storedData[existingItemIndex].itemQuantity += 1;
+        storedData[existingItemIndex].price = (storedData[existingItemIndex].price / (storedData[existingItemIndex].itemQuantity - 1)) * storedData[existingItemIndex].itemQuantity;
+
+
         // If item already available in the cart, remove it........
-        storedData.splice(existingItemIndex, 1);
-        alert("Item Removed from Cart");
+        // storedData.splice(existingItemIndex, 1);
+        
     } else {
         // If item doesn't exist, add it to the cart......
         storedData.push({ title: item.title, image: item.image, price: item.price, itemQuantity: 1 });
-        alert("Item Added to Cart");
     }
 
     // Update localStorage .......
@@ -62,9 +65,7 @@ const addItem = (item) => {
                             <hr />
                             <h5 className="card-title">{item.title}</h5>
                             <p className="card-text">Price : {item.price} $</p>
-                            <button onClick={() => addItem(item, index)} className="btn btn-primary" >
-                            {itemData.some(cartItem => cartItem.title === item.title) ? "REMOVE ITEM" : "ADD TO CART"}
-                            </button>
+                            <button onClick={() => addItem(item, index)} className="btn btn-primary" >ADD TO CART</button>
                         </div>
                     )
                 })}
