@@ -42,7 +42,6 @@ function AddToCart() {
   }, []);
 
   return (
-    <>
     <div className='cart-main-outer'>
       <div className='cartHeading'><h1>Cart Items</h1></div>
       <hr/>
@@ -67,7 +66,6 @@ function AddToCart() {
         ))}
       </div>
     </div>
-    </>
   );
 }
 
