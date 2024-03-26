@@ -134,6 +134,7 @@
     height: auto;
     box-shadow: 2px 1px 2px 0px gray;
     text-align: center;
+    align-items: center;
 
 
 }
@@ -245,6 +246,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
 
 }
 
@@ -255,13 +257,14 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.445);
-    backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(5px); */
+
 
 }
 
 .card-img {
     width: 100%;
-    height: auto;
+    height: 250px;
     border-radius: 5px;
 }
 
@@ -276,6 +279,8 @@
 .cart-price {
     display: flex;
     align-items: center;
+    color: #007bff;
+
 }
 
 .card-text {
