@@ -33,6 +33,7 @@
 .inputBox {
     padding: 5px 10px;
     border: none;
+    width: 150px;
     border-radius: 4px;
     margin-right: 10px;
     font-size: 14px;
@@ -68,6 +69,8 @@
 .link:last-child {
     margin-right: 0;
 }
+
+
 
 @media only screen and (max-width: 480px) {
     .Navbar-Main {
@@ -108,6 +111,10 @@
         font-size: 15px;
         padding-left: 7px;
     }
+}
+
+.SearchOption {
+    display: none;
 }
 
 /* Home Css  */
