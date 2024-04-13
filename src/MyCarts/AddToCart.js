@@ -50,8 +50,8 @@ function AddToCart() {
           <div className="Addcard" key={index}>
             <img src={`${item.image}`} className="card-img" alt={item.title} />
             <div className='card-Details'>
-              <div className='cart-title'>
-                <h5 className="card-title">{item.title}</h5>
+              <div className='cart-title-div'>
+                <h1 className="card-item-title">{item.title}</h1>
               </div>
               <div className='cart-price'>
                 <p className="card-text">Price: {item.price} $</p>
