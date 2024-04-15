@@ -9,13 +9,15 @@ function AddToCart() {
   const [cartData, setCartData] = useState([]);
   const [price, setPrice] = useState([]);
 
-
+    // Increase Item Quantity 
   const increaseQuantity = (item, index) => {
     cartData[index].itemQuantity = item.itemQuantity + 1;
     cartData[index].price = (item.price / (item.itemQuantity - 1)) * cartData[index].itemQuantity;
     setCartData([...cartData]);
     updateLocalStorage([...cartData]);
   };
+
+    // Decrease Item Quantity 
 
   const decreaseQuantity = (item, index) => {
     if (item.itemQuantity > 1) {
