@@ -252,15 +252,14 @@
 .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column; 
-    
-
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
 }
 
 .Addcard {
     display: flex;
-    width: 410px;
+    width: 910px;
     margin: 10px;
     height: auto;
     padding: 10px;
@@ -270,45 +269,41 @@
     text-align: center; 
     border: 2px solid black; 
 
-    /* backdrop-filter: blur(5px); */
-
-
 }
 
 .card-img {
-    width: 60%;
-    height: 150px;
+    width: 100px; 
+    max-height: 150px; 
     border-radius: 5px;
+    align-self: center;
+    
 }
 
 .card-Details {
     padding: 10px;
     text-align: left;
+
 }
 
 .cart-title-div {
     margin-bottom: 10px;
+    text-align: center;
 
 }
 
 .cart-price {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     color: #007bff;
-    float: left;
-
-
+    text-align: center;
 }
 
-.card-text {
-    margin-right: 10px;
+.card-item-title {
+    font-size: 1.4em;
 }
 
 .quantity-buttons {
     display: flex;
+    justify-content: center;
     align-items: center;
-    align-self: center;
 }
 
 .quantity-btn {
@@ -322,7 +317,6 @@
     margin: 0 5px;
 }
 
-
 .quantity-display {
     background-color: #f8f9fa;
     color: #000;
@@ -334,6 +328,18 @@
     line-height: 30px;
 }
 
-.card-item-title {
-    font-size: 1.4em;
+@media (max-width: 768px) {
+    .container {
+        justify-content: flex-start; 
+    }
+
+    .Addcard {
+        width: calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 576px) {
+    .Addcard {
+        width: calc(100% - 20px);
+    }
 }
