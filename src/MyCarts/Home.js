@@ -58,7 +58,7 @@ function Home({filteredData}) {
                             <img src={`${item.image}`} className="card-img-top" />
                             <hr />
                             <h5 className="card-title">{item.title}</h5>
-                            <p className="card-text">Price : {item.price} ₹</p>
+                            <p className="card-text">Price : {item.price} $ </p>
                             <button onClick={() => addItem(item)} className="btn btn-primary" >ADD TO CART</button>
 
                         </div>
