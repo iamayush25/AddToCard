@@ -4,6 +4,7 @@ import { json } from 'react-router-dom'
 import AddToCart from './AddToCart'
 
 
+
 function Home({filteredData}) {
     const [data, setData] = useState([])
     const [itemData, setitemData] = useState([])
